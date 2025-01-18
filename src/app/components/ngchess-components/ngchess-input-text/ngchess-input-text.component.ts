@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
@@ -14,8 +14,10 @@ export class NgchessInputTextComponent {
   @Input() placeholder: string = '';
   @Input() error: string = '';
   @Input() value: string = '';
+  @Output() valueChange = new EventEmitter<string>();
 
   onValueChange(newValue: string) {
     this.value = newValue;
+    this.valueChange.emit(newValue);
   }
 }
