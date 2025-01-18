@@ -29,14 +29,13 @@ describe('MainLayoutComponent', () => {
 
   it('should render the app title', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('a')?.textContent?.trim()).toBe('Ng Chess App');
+    expect(compiled.querySelector('a')?.textContent?.trim()).toBe('Ng Chess');
   });
 
   it('should render auth buttons', () => {
     const compiled = fixture.nativeElement as HTMLElement;
     const buttons = compiled.querySelectorAll('button');
-    expect(buttons.length).toBe(2);
-    expect(buttons[0].textContent?.trim()).toBe('Sign up');
-    expect(buttons[1].textContent?.trim()).toBe('Sign in');
+    expect(buttons.length).toBe(1);
+    expect(buttons[0].textContent?.trim()).toBe('Sign in');
   });
 });

@@ -1,0 +1,70 @@
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50" (click)="close()">
+  <div class="bg-white rounded-lg p-8 w-full max-w-md" (click)="$event.stopPropagation()">
+    <div class="flex justify-between items-center mb-6">
+      <h2 class="text-2xl font-bold text-gray-900">Sign in</h2>
+      <button class="text-gray-500 hover:text-gray-700" (click)="close()">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+
+    <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="space-y-6">
+      <div>
+        <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+        <app-ngchess-input-text
+          type="email"
+          id="email"
+          [value]="signInForm.get('email')?.value"
+          (valueChange)="signInForm.get('email')?.setValue($event)"
+          placeholder="Enter your email"
+          [error]="signInForm.get('email')?.errors && signInForm.get('email')?.touched ? 'Please enter a valid email' : ''"
+        ></app-ngchess-input-text>
+      </div>
+
+      <div>
+        <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+        <app-ngchess-input-text
+          type="password"
+          id="password"
+          [value]="signInForm.get('password')?.value"
+          (valueChange)="signInForm.get('password')?.setValue($event)"
+          placeholder="Enter your password"
+          [error]="signInForm.get('password')?.errors && signInForm.get('password')?.touched ? 'Password is required' : ''"
+        ></app-ngchess-input-text>
+      </div>
+
+      <div class="flex items-center justify-between">
+        <div class="flex items-center">
+          <input type="checkbox" id="remember" formControlName="remember"
+            class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+          <label for="remember" class="ml-2 block text-sm text-gray-900">Remember me</label>
+        </div>
+        <button type="button" class="text-sm font-medium text-gray-600 hover:text-gray-500">
+          Forgot password?
+        </button>
+      </div>
+
+      <button type="submit" [disabled]="signInForm.invalid"
+        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed">
+        Sign in
+      </button>
+    </form>
+
+    <div class="mt-6">
+      <div class="relative">
+        <div class="absolute inset-0 flex items-center">
+          <div class="w-full border-t border-gray-300"></div>
+        </div>
+        <div class="relative flex justify-center text-sm">
+          <span class="px-2 bg-white text-gray-500">Don't have an account?</span>
+        </div>
+      </div>
+      <div class="mt-6">
+        <button (click)="goToSignUp()" class="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+          Create an account
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

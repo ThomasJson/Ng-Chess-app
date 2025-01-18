@@ -2,13 +2,10 @@
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
     <div class="flex justify-between items-center h-16">
       <a routerLink="/" class="text-2xl font-bold text-gray-800 hover:text-gray-600 transition-colors">
-        Ng Chess App
+        Ng Chess
       </a>
       <div class="flex gap-4">
-        <button routerLink="/signup" class="px-4 py-2 text-gray-800 border border-gray-800 rounded-md hover:bg-gray-800 hover:text-white transition-colors">
-          Sign up
-        </button>
-        <button routerLink="/signin" class="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-colors">
+        <button (click)="openSignInModal()" class="px-4 py-2 bg-gray-800 text-white rounded-md hover:bg-gray-700 transition-colors">
           Sign in
         </button>
       </div>
@@ -19,3 +16,5 @@
 <main class="">
   <router-outlet></router-outlet>
 </main>
+
+<app-signin-modal *ngIf="showSignInModal" (closeModal)="closeSignInModal()"></app-signin-modal>

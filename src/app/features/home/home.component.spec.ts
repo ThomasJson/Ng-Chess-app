@@ -29,7 +29,7 @@ describe('HomeComponent', () => {
 
   it('should have a welcome message', () => {
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Bienvenue sur Ng Chess App');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Bienvenue sur Ng Chess');
   });
 
   it('should have a start game button', () => {
