@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from './features/home/home.component';
+import { MainLayoutComponent } from './layouts/main-layout/main-layout.component';
 
 @Component({
   selector: 'app-root',
-  imports: [
-    RouterOutlet,
-    HomeComponent
-  ],
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    MainLayoutComponent
+  ]
 })
 export class AppComponent {
   title = 'NgChessApp';
