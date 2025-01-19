@@ -1,0 +1,22 @@
+<header class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16">
+      <div class="flex items-center gap-4">
+        <a routerLink="/" class="text-gray-800 hover:text-gray-600 transition-colors">
+          <i class="fas fa-chevron-left"></i>
+          Back
+        </a>
+        <h1 class="text-xl font-semibold text-gray-800">Game Room</h1>
+      </div>
+      <div class="flex gap-4">
+        <button (click)="onResign()" class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 transition-colors">
+          Resign
+        </button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main class="pt-16">
+  <router-outlet></router-outlet>
+</main>
