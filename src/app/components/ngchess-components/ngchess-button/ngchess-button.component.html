@@ -1,0 +1,8 @@
+<button
+    [routerLink]="routerLink"
+    [class]="buttonClass"
+    (click)="onClick.emit($event)"
+    [type]="type"
+    [disabled]="disabled">
+    <ng-content></ng-content>
+</button>
