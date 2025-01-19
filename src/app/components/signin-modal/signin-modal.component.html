@@ -2,11 +2,11 @@
   <div class="bg-white rounded-lg p-8 w-full max-w-md" (click)="$event.stopPropagation()">
     <div class="flex justify-between items-center mb-6">
       <h2 class="text-2xl font-bold text-gray-900">Sign in</h2>
-      <button class="text-gray-500 hover:text-gray-700" (click)="close()">
+      <ngchess-button variant="secondary" (onClick)="close()">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
         </svg>
-      </button>
+      </ngchess-button>
     </div>
 
     <form [formGroup]="signInForm" (ngSubmit)="onSubmit()" class="space-y-6">
@@ -40,15 +40,14 @@
             class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
           <label for="remember" class="ml-2 block text-sm text-gray-900">Remember me</label>
         </div>
-        <button type="button" class="text-sm font-medium text-gray-600 hover:text-gray-500">
+        <ngchess-button variant="secondary" type="button">
           Forgot password?
-        </button>
+        </ngchess-button>
       </div>
 
-      <button type="submit" [disabled]="signInForm.invalid"
-        class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-gray-800 hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 disabled:opacity-50 disabled:cursor-not-allowed">
+      <ngchess-button variant="primary" type="submit" [disabled]="signInForm.invalid">
         Sign in
-      </button>
+      </ngchess-button>
     </form>
 
     <div class="mt-6">
@@ -61,9 +60,9 @@
         </div>
       </div>
       <div class="mt-6">
-        <button (click)="goToSignUp()" class="w-full flex justify-center py-2 px-4 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500">
+        <ngchess-button variant="secondary" type="button" (onClick)="goToSignUp()">
           Create an account
-        </button>
+        </ngchess-button>
       </div>
     </div>
   </div>
