@@ -1,4 +1,4 @@
-<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-26" (click)="close()">
+<div class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 " (click)="close()">
   <div class="bg-white rounded-lg p-8 w-full max-w-md" (click)="$event.stopPropagation()">
     <div class="flex justify-between items-center mb-6">
       <h2 class="text-2xl font-bold text-gray-900">Sign in</h2>
@@ -34,20 +34,25 @@
         ></app-ngchess-input-text>
       </div>
 
-      <div class="flex items-center justify-between">
-        <div class="flex items-center">
-          <input type="checkbox" id="remember" formControlName="remember"
-            class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
-          <label for="remember" class="ml-2 block text-sm text-gray-900">Remember me</label>
-        </div>
-        <ngchess-button variant="secondary" type="button">
-          Forgot password?
-        </ngchess-button>
-      </div>
 
+    <div class="flex justify-between m-auto w-full">
+      <div class="flex items-center justify-center">
+        <input type="checkbox" id="remember" formControlName="remember"
+          class="h-4 w-4 rounded border-gray-300 text-gray-600 focus:ring-gray-500">
+        <label for="remember" class="ml-2 block text-sm text-gray-900">Remember me</label>
+    </div>
+
+      
       <ngchess-button variant="primary" type="submit" [disabled]="signInForm.invalid">
         Sign in
       </ngchess-button>
+    
+      </div>
+
+
+     
+
+     
     </form>
 
     <div class="mt-6">
@@ -59,10 +64,20 @@
           <span class="px-2 bg-white text-gray-500">Don't have an account?</span>
         </div>
       </div>
-      <div class="mt-6">
+      <div class="flex justify-between mt-6">
+
+
+        <ngchess-button variant="secondary" type="button">
+          Forgot password?
+        </ngchess-button>
+
+        
         <ngchess-button variant="secondary" type="button" (onClick)="goToSignUp()">
           Create an account
         </ngchess-button>
+
+      
+      
       </div>
     </div>
   </div>
